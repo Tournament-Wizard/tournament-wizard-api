@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.tournament_wizard</groupId>
 	<artifactId>TournamentWizard</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>TournamentWizard</name>
 	<description>Tournament Wizard API</description>
 	<properties>
