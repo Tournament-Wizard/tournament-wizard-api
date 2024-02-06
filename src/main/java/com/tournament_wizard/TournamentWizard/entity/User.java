@@ -1,17 +1,11 @@
 package com.tournament_wizard.TournamentWizard.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import jakarta.persistence.Id;
-
 @Entity
 @NoArgsConstructor
-@Table(name= "users")
 @Data
 public class User {
     @Id
