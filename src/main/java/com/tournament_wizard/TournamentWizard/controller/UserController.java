@@ -2,7 +2,11 @@ package com.tournament_wizard.TournamentWizard.controller;
 
 import com.tournament_wizard.TournamentWizard.entity.User;
 import com.tournament_wizard.TournamentWizard.service.UserService;
+import com.tournament_wizard.TournamentWizard.utils.AuthResponse;
+import com.tournament_wizard.TournamentWizard.utils.UserCredentials;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -45,6 +49,29 @@ public class UserController {
             throw new IllegalArgumentException("User ID in path and request body must match");
         }
         return userService.saveUser(user);
+    }
+
+    // User authentication
+    @PostMapping("/auth")
+    public ResponseEntity<AuthResponse> userAuthentication(@RequestBody UserCredentials credentials) {
+        String username = credentials.getUsername();
+        String password = credentials.getPassword();
+
+        Optional<User> authenticatedUser = userService.authenticateUser(username, password);
+
+        if (authenticatedUser.isPresent()) {
+            // User is authenticated, generate the authentication response
+            User user = authenticatedUser.get();
+
+            // Create the authentication response
+            AuthResponse authResponse = new AuthResponse("success", "Login successful", user.getUsername());
+
+            // Return the authentication response
+            return ResponseEntity.ok(authResponse);
+        } else {
+            // Authentication failed
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(new AuthResponse("error", "Invalid credentials", null));
+        }
     }
 
     // Delete a user by ID
