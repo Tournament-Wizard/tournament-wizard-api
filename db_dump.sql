@@ -16,3 +16,4 @@ VALUES
 (null, 'Freeze', '74df4764895198bc1c2379e94ff92ae4e58c2137b8ab8f96d81d7025345ccb6e', 3, 'mi papa');
 
 SELECT * FROM user;
+
