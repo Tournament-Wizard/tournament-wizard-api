@@ -1,7 +1,7 @@
 CREATE DATABASE IF NOT EXISTS tournament_wizard;
 USE tournament_wizard;
 
-CREATE TABLE IF NOT EXISTS `users` (
+CREATE TABLE IF NOT EXISTS `user` (
 `id` INT AUTO_INCREMENT NOT NULL,
 `username` VARCHAR(255) NOT NULL,
 `password` VARCHAR(255) NOT NULL,
@@ -10,4 +10,4 @@ CREATE TABLE IF NOT EXISTS `users` (
 PRIMARY KEY(`id`)
 );
 
-SELECT * FROM users;
+SELECT * FROM User;
