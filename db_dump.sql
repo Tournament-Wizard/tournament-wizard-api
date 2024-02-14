@@ -2,7 +2,9 @@ CREATE DATABASE IF NOT EXISTS tournament_wizard;
 USE tournament_wizard;
 DROP TABLE IF EXISTS user;
 DROP TABLE IF EXISTS api_keys;
-DROP TABLE IF EXISTS tournaments;
+DROP TABLE IF EXISTS tournament;
+DROP TABLE IF EXISTS team;
+DROP TABLE IF EXISTS player;
 
 CREATE TABLE IF NOT EXISTS `user` (
 `id` INT AUTO_INCREMENT NOT NULL,
@@ -19,7 +21,7 @@ CREATE TABLE IF NOT EXISTS `api_keys` (
 PRIMARY KEY(`id`)
 );
 
-CREATE TABLE IF NOT EXISTS `tournaments` (
+CREATE TABLE IF NOT EXISTS `tournament` (
 `id` INT AUTO_INCREMENT NOT NULL,
 `Name` VARCHAR(255) NOT NULL,
 `Description` VARCHAR(255) NOT NULL,
@@ -30,6 +32,21 @@ CREATE TABLE IF NOT EXISTS `tournaments` (
 `Game` VARCHAR(255) NOT NULL,
 `Location` VARCHAR(255) NOT NULL,
 `Supervisor` VARCHAR(255) NOT NULL,
+PRIMARY KEY (`id`)
+);
+
+CREATE TABLE IF NOT EXISTS `team` (
+`id` INT AUTO_INCREMENT NOT NULL,
+`Name` VARCHAR(255) NOT NULL,
+`Coach` VARCHAR(255) NOT NULL,
+PRIMARY KEY (`id`)
+);
+
+CREATE TABLE IF NOT EXISTS `player` (
+`id` INT AUTO_INCREMENT NOT NULL,
+`Name` VARCHAR(255) NOT NULL,
+`Nationality` VARCHAR(255) NOT NULL,
+`Team` INT NOT NULL,
 PRIMARY KEY (`id`)
 );
 
@@ -44,11 +61,21 @@ VALUES
 (null, 'dc635b62-8f4b-4bb7-ac77-0bb3c67c4fbc'),
 (null, '78f10d8f-6048-474d-96df-16b7339650f7');
 
-INSERT INTO tournaments (id, Name, Description, Status, Format, Starting_date, Finishing_date, Game, Location, Supervisor)
+INSERT INTO tournament (id, Name, Description, Status, Format, Starting_date, Finishing_date, Game, Location, Supervisor)
 VALUES
 (null, 'Circuito Tormenta', 'Lol tournament for anyone', 'Open', 'Swiss', '2024-02-22', '2024-02-27', 'League of Legends', 'Barcelona', 'Freeze'),
-(null, 'TryHard Cup', 'CSGO only face it lvl 10', 'Open', 'League', '2024-02-22', '2024-02-27', 'CSGO', 'Barcelona', 'Carlos');
+(null, 'TryHard League', 'CSGO only face it lvl 10', 'Open', 'League', '2024-02-22', '2024-02-27', 'CSGO', 'Barcelona', 'Carlos');
+
+INSERT INTO team (id, Name, Coach)
+VALUES
+(null, 'KOI', 'Ibai'),
+(null, 'Team Heretics', 'TheGrefg');
+
+INSERT INTO player (id, Name, Nationality, Team)
+VALUES
+(null, 'Carlos Terrero', 'Spain', 1),
+(null, 'Freeze Casti', 'Catalonia', 2);
 
 SELECT * FROM user;
 SELECT * FROM api_keys;
-SELECT * FROM tournaments;
+SELECT * FROM tournament;
