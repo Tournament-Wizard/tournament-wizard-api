@@ -22,8 +22,9 @@ public class Tournament {
     private String Game;
     private String Location;
     private String Supervisor;
+    private int participants_count;
 
-    public Tournament(Integer id, String name, String description, String status, String format, Date starting_date, Date finishing_date, String game, String location, String supervisor) {
+    public Tournament(Integer id, String name, String description, String status, String format, Date starting_date, Date finishing_date, String game, String location, String supervisor, int participants_count) {
         this.id = id;
         this.Name = name;
         this.Description = description;
@@ -34,5 +35,6 @@ public class Tournament {
         this.Game = game;
         this.Location = location;
         this.Supervisor = supervisor;
+        this.participants_count = participants_count;
     }
 }

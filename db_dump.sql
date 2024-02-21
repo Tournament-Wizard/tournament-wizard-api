@@ -32,6 +32,7 @@ CREATE TABLE IF NOT EXISTS `tournament` (
 `Game` VARCHAR(255) NOT NULL,
 `Location` VARCHAR(255) NOT NULL,
 `Supervisor` VARCHAR(255) NOT NULL,
+`participants_count` INT NOT NULL,
 PRIMARY KEY (`id`)
 );
 
@@ -61,10 +62,10 @@ VALUES
 (null, 'dc635b62-8f4b-4bb7-ac77-0bb3c67c4fbc'),
 (null, '78f10d8f-6048-474d-96df-16b7339650f7');
 
-INSERT INTO tournament (id, Name, Description, Status, Format, Starting_date, Finishing_date, Game, Location, Supervisor)
+INSERT INTO tournament (id, Name, Description, Status, Format, Starting_date, Finishing_date, Game, Location, Supervisor, participants_count)
 VALUES
-(null, 'Circuito Tormenta', 'Lol tournament for anyone', 'Open', 'Swiss', '2024-02-22', '2024-02-27', 'League of Legends', 'Barcelona', 'Freeze'),
-(null, 'TryHard League', 'CSGO only face it lvl 10', 'Open', 'League', '2024-02-22', '2024-02-27', 'CSGO', 'Barcelona', 'Carlos');
+(null, 'Circuito Tormenta', 'Lol tournament for anyone', 'Open', 'Swiss', '2024-02-22', '2024-02-27', 'League of Legends', 'Barcelona', 'Freeze', 5),
+(null, 'TryHard League', 'CSGO only face it lvl 10', 'Open', 'League', '2024-02-22', '2024-02-27', 'CSGO', 'Barcelona', 'Carlos', 21);
 
 INSERT INTO team (id, Name, Coach)
 VALUES
