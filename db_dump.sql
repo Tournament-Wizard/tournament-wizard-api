@@ -75,8 +75,9 @@ VALUES
 
 INSERT INTO player (id, Name, Nationality, Team)
 VALUES
-(null, 'Carlos Terrero', 'Spain', 1),
-(null, 'Freeze Casti', 'Catalonia', 2);
+(null, 'Carlos Terrero', 'spain', 1),
+(null, 'Freeze Casti', 'south-korea', 2);
+(null, 'Freeze Casti', 'china', 2);
 
 SELECT * FROM user;
 SELECT * FROM team;
