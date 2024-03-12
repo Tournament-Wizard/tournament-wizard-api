@@ -15,11 +15,13 @@ public class Team {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String Name;
+    private String teamtag;
     private String Coach;
 
-    public Team(Integer id, String name, String coach) {
+    public Team(Integer id, String name, String teamtag, String coach) {
         this.id = id;
         this.Name = name;
+        this.teamtag = teamtag;
         this.Coach = coach;
     }
 }

@@ -39,6 +39,7 @@ PRIMARY KEY (`id`)
 CREATE TABLE IF NOT EXISTS `team` (
 `id` INT AUTO_INCREMENT NOT NULL,
 `Name` VARCHAR(255) NOT NULL,
+`teamtag` VARCHAR(4) NOT NULL,
 `Coach` VARCHAR(255) NOT NULL,
 PRIMARY KEY (`id`)
 );
@@ -67,10 +68,10 @@ VALUES
 (null, 'Circuito Tormenta', 'Lol tournament for anyone', 'Open', 'Swiss', '2024-02-22', '2024-02-27', 'League of Legends', 'Barcelona', 'Freeze', 5),
 (null, 'TryHard League', 'CSGO only face it lvl 10', 'Open', 'League', '2024-02-22', '2024-02-27', 'CSGO', 'Barcelona', 'Carlos', 21);
 
-INSERT INTO team (id, Name, Coach)
+INSERT INTO team (id, Name, teamtag, Coach)
 VALUES
-(null, 'KOI', 'Ibai'),
-(null, 'Team Heretics', 'TheGrefg');
+(null, 'KOI', 'KOIP', 'Ibai'),
+(null, 'Team Heretics', 'TH', 'TheGrefg');
 
 INSERT INTO player (id, Name, Nationality, Team)
 VALUES
@@ -78,5 +79,5 @@ VALUES
 (null, 'Freeze Casti', 'Catalonia', 2);
 
 SELECT * FROM user;
-SELECT * FROM api_keys;
+SELECT * FROM team;
 SELECT * FROM tournament;
