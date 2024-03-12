@@ -9,5 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class TeamDTO {
     private String name;
+    private String teamtag;
+    private Integer id;
 }
 

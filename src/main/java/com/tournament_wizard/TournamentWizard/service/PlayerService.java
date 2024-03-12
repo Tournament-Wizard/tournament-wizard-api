@@ -39,8 +39,8 @@ public class PlayerService {
         Team team = teamRepository.findById(teamId)
                 .orElseThrow(() -> new EntityNotFoundException("Team not found with ID: " + teamId));
 
-        TeamDTO teamDTO = new TeamDTO(team.getName());
-        PlayerDTO playerDTO = new PlayerDTO(player.getId(), player.getName(), player.getNationality(), team.getName());
+        TeamDTO teamDTO = new TeamDTO(team.getName(), team.getTeamtag(), team.getId());
+        PlayerDTO playerDTO = new PlayerDTO(player.getId(), player.getName(), player.getNationality(), team.getName(), team.getTeamtag(), team.getId());
 
         return playerDTO;
     }

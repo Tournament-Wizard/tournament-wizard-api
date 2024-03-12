@@ -9,7 +9,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class PlayerDTO {
     private Integer id;
-    private String Name;
-    private String Nationality;
-    private String Team;
+    private String name;
+    private String nationality;
+    private String team_name;
+    private String teamtag;
+    private Integer team_id;
 }
