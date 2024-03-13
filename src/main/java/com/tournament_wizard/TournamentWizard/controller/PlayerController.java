@@ -2,6 +2,7 @@ package com.tournament_wizard.TournamentWizard.controller;
 
 import com.tournament_wizard.TournamentWizard.entity.DTO.PlayerDTO;
 import com.tournament_wizard.TournamentWizard.entity.Player;
+import com.tournament_wizard.TournamentWizard.entity.Tournament;
 import com.tournament_wizard.TournamentWizard.service.PlayerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -38,6 +39,11 @@ public class PlayerController {
     public ResponseEntity<PlayerDTO> getPlayer(@PathVariable int playerId) {
         PlayerDTO playerDTO = playerService.findPlayerByIdWithTeam(playerId);
         return ResponseEntity.ok(playerDTO);
+    }
+
+    @GetMapping("basic/{playerId}")
+    public Optional<Player> getAllDefaultPlayers(@PathVariable int playerId) {
+        return playerService.getPlayerById(playerId);
     }
     public Optional<Player> getPlayerById(@PathVariable Integer playerId) {return playerService.getPlayerById(playerId);}
 

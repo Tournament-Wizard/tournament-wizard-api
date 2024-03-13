@@ -13,5 +13,5 @@ public class PlayerDTO {
     private String nationality;
     private String team_name;
     private String teamtag;
-    private Integer team_id;
+    private Integer team;
 }
